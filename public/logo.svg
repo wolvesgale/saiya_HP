@@ -1,32 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" width="360" height="180">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&amp;display=swap');
-    </style>
-  </defs>
-
-  <!-- 楕円スウォッシュ（手書き風・わずかに傾き） -->
-  <ellipse cx="175" cy="105" rx="155" ry="62"
-           fill="none" stroke="#1a1a1a" stroke-width="2.2"
-           stroke-linecap="round"
-           transform="rotate(-4, 175, 105)"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" fill="none">
   <!-- 株式会社 -->
-  <text x="175" y="42"
-        text-anchor="middle"
-        font-family="'Helvetica Neue', 'Hiragino Sans', Arial, sans-serif"
-        font-size="13"
-        fill="#1a1a1a"
-        letter-spacing="5">株式会社</text>
+  <text
+    x="168" y="28"
+    font-family="'Noto Serif JP', 'Hiragino Mincho Pro', Georgia, serif"
+    font-size="10"
+    letter-spacing="5"
+    fill="#1a1a1a"
+    text-anchor="middle">株式会社</text>
 
-  <!-- Saiya メインロゴ -->
-  <text x="175" y="125"
-        text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif"
-        font-style="italic"
-        font-weight="normal"
-        font-size="68"
-        fill="#1a1a1a"
-        letter-spacing="-1">Saiya</text>
+  <!-- Saiya main logotype - large italic serif -->
+  <text
+    x="166" y="112"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="400"
+    font-size="88"
+    fill="#1a1a1a"
+    text-anchor="middle">Saiya</text>
 
+  <!-- Swoosh underline: starts lower-left, sweeps up to upper-right (like the sketch) -->
+  <path
+    d="M 6 132 C 50 152, 210 156, 334 92"
+    stroke="#1a1a1a"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    fill="none"/>
 </svg>
