@@ -86,9 +86,11 @@ export default function ContactPage() {
               <p className="text-xs tracking-widest text-zinc-400 mb-4">OFFICE</p>
               <p className="text-sm text-zinc-500 leading-loose">
                 株式会社Saiya<br />
-                〒466-0027<br />
-                愛知県名古屋市昭和区福江三丁目2番8号 名栄ビル102<br />
-                代表取締役 加藤 真二
+                愛知県名古屋市中川区中須町234-5<br />
+                代表取締役 加藤 真二<br />
+                <a href="mailto:saiya0318@saiya.info" className="text-[var(--accent)] hover:opacity-70 transition-opacity">
+                  saiya0318@saiya.info
+                </a>
               </p>
             </div>
           </div>

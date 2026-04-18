@@ -299,9 +299,11 @@ export default function Home() {
           <div>
             <Image src="/logo.svg" alt="株式会社Saiya" width={110} height={46} className="mb-4" />
             <p className="text-xs text-zinc-400 leading-loose">
-              〒466-0027<br />
-              愛知県名古屋市昭和区福江三丁目2番8号 名栄ビル102<br />
-              代表取締役 加藤 真二
+              愛知県名古屋市中川区中須町234-5<br />
+              代表取締役 加藤 真二<br />
+              <a href="mailto:saiya0318@saiya.info" className="hover:text-[var(--accent)] transition-colors">
+                saiya0318@saiya.info
+              </a>
             </p>
           </div>
           <nav className="flex flex-col gap-3 text-xs text-zinc-500">
