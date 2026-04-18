@@ -1,31 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 162" fill="none">
-  <!-- 左が丸・右が尖ったアーモンド形（スケッチ通り） -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 145" fill="none">
+  <!--
+    S字フレーム:
+    - 左側がS字の外輪（上下の膨らみと中央のくびれ）
+    - 上辺・下辺が右へ延びて先端で合流（とがった右端）
+    - このS字パス自体が "S" の文字を兼ねる
+  -->
   <path
-    d="M 28 81
-       C 28 22, 268 14, 318 81
-       C 268 148, 28 140, 28 81
+    d="M 52 22
+       C 80 12, 220 9, 240 72
+       C 220 135, 80 133, 52 123
+       C 30 132, 6 120, 6 98
+       C 6 84, 26 77, 26 72
+       C 26 67, 6 60, 6 46
+       C 6 24, 30 12, 52 22
        Z"
     stroke="#1a1a1a"
     stroke-width="2.2"
     stroke-linejoin="round"
     fill="none"/>
 
-  <!-- 株式会社 -->
+  <!-- 株式会社（上部） -->
   <text
-    x="166" y="44"
+    x="148" y="44"
     font-family="'Noto Serif JP', 'Hiragino Mincho Pro', Georgia, serif"
-    font-size="9.5"
+    font-size="9"
     letter-spacing="5"
     fill="#1a1a1a"
     text-anchor="middle">株式会社</text>
 
-  <!-- Saiya -->
+  <!-- aiya（S字パスが "S" を担う） -->
   <text
-    x="162" y="114"
+    x="148" y="106"
     font-family="Georgia, 'Times New Roman', serif"
     font-style="italic"
     font-weight="400"
-    font-size="74"
+    font-size="68"
     fill="#1a1a1a"
-    text-anchor="middle">Saiya</text>
+    text-anchor="middle">aiya</text>
 </svg>
