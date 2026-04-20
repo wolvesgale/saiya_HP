@@ -22,7 +22,7 @@ export default function ContactPage() {
         <section className="py-20 bg-white">
           <div className="max-w-2xl mx-auto px-6">
             <p className="text-zinc-500 leading-loose mb-12">
-              催事のご依頼・ご相談は以下のフォームよりお気軽にお問い合わせください。<br />
+              イベント出店に関するご依頼・ご相談は以下のフォームよりお気軽にお問い合わせください。<br />
               通常2営業日以内にご返信いたします。
             </p>
 
@@ -60,8 +60,8 @@ export default function ContactPage() {
                   className="w-full border border-[var(--border)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] transition-colors bg-white"
                 >
                   <option value="">選択してください</option>
-                  <option value="venue">会場オーナーとして相談したい</option>
-                  <option value="vendor">出展者・作家として相談したい</option>
+                  <option value="sales">販売パートナーとしての参加を検討している</option>
+                  <option value="business">ビジネスパートナーとしての協業を検討している</option>
                   <option value="other">その他</option>
                 </select>
               </div>

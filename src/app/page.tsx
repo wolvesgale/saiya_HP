@@ -2,30 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ParticleCanvas } from "@/components/ParticleCanvas";
 
-// ── 苺大福 SVG ──────────────────────────────────────────────
-function Daifuku({ size = 120 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="70" cy="128" rx="48" ry="9" fill="#D4A882" opacity="0.18"/>
-      <ellipse cx="70" cy="80" rx="60" ry="55" fill="#FFF8F5"/>
-      <ellipse cx="70" cy="80" rx="60" ry="55" stroke="#EDD5C0" strokeWidth="1.2"/>
-      <path d="M 18 92 Q 70 118 122 92" stroke="#EDD5C0" strokeWidth="1" fill="none" opacity="0.6"/>
-      <path d="M 52 70 Q 44 50 62 44 Q 70 38 78 44 Q 96 50 88 70 Q 78 88 70 96 Q 62 88 52 70 Z" fill="#E8415A"/>
-      <path d="M 62 52 Q 68 44 74 48 Q 68 50 66 58 Z" fill="#FF7090" opacity="0.55"/>
-      <ellipse cx="63" cy="57" rx="1.8" ry="2.2" fill="#fff" opacity="0.7" transform="rotate(-15 63 57)"/>
-      <ellipse cx="72" cy="52" rx="1.8" ry="2.2" fill="#fff" opacity="0.7"/>
-      <ellipse cx="80" cy="61" rx="1.8" ry="2.2" fill="#fff" opacity="0.7" transform="rotate(15 80 61)"/>
-      <ellipse cx="67" cy="68" rx="1.8" ry="2.2" fill="#fff" opacity="0.65"/>
-      <ellipse cx="58" cy="67" rx="1.8" ry="2.2" fill="#fff" opacity="0.65" transform="rotate(-10 58 67)"/>
-      <ellipse cx="77" cy="73" rx="1.8" ry="2.2" fill="#fff" opacity="0.6" transform="rotate(20 77 73)"/>
-      <path d="M 60 44 Q 52 28 44 34 Q 52 36 58 44 Z" fill="#5BAD46"/>
-      <path d="M 70 38 Q 70 20 65 26 Q 68 31 68 40 Z" fill="#5BAD46"/>
-      <path d="M 80 44 Q 88 28 96 34 Q 88 36 82 44 Z" fill="#5BAD46"/>
-      <path d="M 52 70 Q 44 50 62 44 Q 70 38 78 44 Q 96 50 88 70 Q 78 88 70 96 Q 62 88 52 70 Z" fill="none" stroke="#FFF8F5" strokeWidth="3.5"/>
-    </svg>
-  );
-}
-
 // ── フローステップ アイコン ──────────────────────────────────
 function FlowIcon({ type }: { type: string }) {
   if (type === "contact") return (
@@ -76,76 +52,76 @@ const FLOW_STEPS = [
   {
     icon: "meeting",
     step: "02",
-    title: "ヒアリング・お打合せ",
-    desc: "開催場所・スペース・期間・ご希望のジャンルなどをお伺いします。事前の集客施策についてもアドバイスいたします。",
+    title: "ヒアリング・要件整理",
+    desc: "ご希望の業種・商材・エリア・時期などをお伺いします。販売パートナー・ビジネスパートナーのどちらとしての参加かも整理します。",
   },
   {
     icon: "plan",
     step: "03",
-    title: "企画・出展者のご提案",
-    desc: "催事場の広さと目的に合わせた売り場プランをご提案。和菓子・漆器・陶芸など最適な出展者をご紹介します。",
+    title: "プラン・マッチングのご提案",
+    desc: "ご要件に合わせた出店プランをご提案。場所の確保、商材調達システムの活用方法、パートナー候補のご紹介など具体策をご提示します。",
   },
   {
     icon: "contract",
     step: "04",
-    title: "ご契約・開催日の確定",
-    desc: "正式にご契約を結びます。開催日までのスケジュール、当日のタイムテーブル、什器・スタッフの手配を進めます。",
+    title: "ご契約・体制確定",
+    desc: "正式にご契約を結びます。出店日までのスケジュール、当日の役割分担、商材・資材の手配を進めます。",
   },
   {
     icon: "event",
     step: "05",
-    title: "開催当日・運営サポート",
-    desc: "搬入設営から開店・接客・売上管理・撤去まで一括で対応。終了後は実績レポートをご報告し、次回へ活かします。",
+    title: "出店当日・現場サポート",
+    desc: "販売スクリプト・接客ノウハウをもとに現場をサポート。終了後は実績レポートをもとに次回へ向けた改善を行います。",
   },
 ];
 
 const EXAMPLES = [
-  { location: "愛知県 名古屋市", venue: "百貨店", category: "和菓子・生菓子フェア", bg: "from-amber-800 to-amber-600" },
-  { location: "大阪府 大阪市", venue: "ショッピングセンター", category: "全国銘菓・スイーツ展", bg: "from-stone-700 to-stone-500" },
-  { location: "東京都 新宿区", venue: "百貨店", category: "伝統工芸・漆器展", bg: "from-zinc-700 to-zinc-500" },
-  { location: "岐阜県 各務原市", venue: "商業施設", category: "産直和スイーツ市", bg: "from-amber-700 to-yellow-600" },
-  { location: "三重県 津市", venue: "ホテル", category: "クラフト・陶器展", bg: "from-stone-600 to-amber-700" },
-  { location: "静岡県 浜松市", venue: "ショッピングモール", category: "和雑貨・工芸品フェア", bg: "from-zinc-600 to-stone-600" },
+  { location: "愛知県 名古屋市", venue: "百貨店", category: "和菓子・生菓子フェア", bg: "from-slate-700 to-slate-500" },
+  { location: "東京都 渋谷区", venue: "商業施設", category: "サンプル提供イベント", bg: "from-zinc-700 to-zinc-500" },
+  { location: "大阪府 大阪市", venue: "ショッピングセンター", category: "食品・物販マーケット", bg: "from-stone-700 to-stone-500" },
+  { location: "愛知県 岡崎市", venue: "ホテル", category: "地域特産品・クラフト展", bg: "from-slate-600 to-zinc-600" },
+  { location: "神奈川県 横浜市", venue: "商業施設", category: "美容・ヘルスケア展示", bg: "from-zinc-600 to-slate-600" },
+  { location: "三重県 津市", venue: "ショッピングモール", category: "食品・雑貨フェスタ", bg: "from-stone-600 to-zinc-700" },
 ];
 
 const MERITS = [
   {
     num: "01",
-    title: "搬入から撤去まで完全一括",
-    desc: "商品の搬入・設営、当日の販売スタッフ配置、売上・在庫管理、そして撤去まで。会場様は場所を提供するだけで、すべてお任せいただけます。",
+    title: "場所の確保と商材・資材の調達システム",
+    desc: "全国の商業施設・百貨店・ホテル等との独自ネットワークで出店場所を確保。商材・資材の調達システムで準備の手間とコストを大幅に削減します。",
     icon: (
       <svg viewBox="0 0 56 56" fill="none" className="w-12 h-12">
-        <rect x="8" y="14" width="40" height="28" rx="3" stroke="#8B6F47" strokeWidth="2"/>
-        <path d="M8 22 H48" stroke="#8B6F47" strokeWidth="1.5"/>
-        <path d="M20 14 V8 M36 14 V8" stroke="#8B6F47" strokeWidth="2" strokeLinecap="round"/>
-        <path d="M16 32 L24 32 M30 32 L40 32" stroke="#8B6F47" strokeWidth="2" strokeLinecap="round"/>
-        <path d="M16 38 L32 38" stroke="#8B6F47" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="8" y="14" width="40" height="28" rx="3" stroke="var(--accent)" strokeWidth="2"/>
+        <path d="M8 22 H48" stroke="var(--accent)" strokeWidth="1.5"/>
+        <path d="M20 14 V8 M36 14 V8" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M16 32 L24 32 M30 32 L40 32" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M16 38 L32 38" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
   },
   {
     num: "02",
-    title: "全国の会場・出展者ネットワーク",
-    desc: "百貨店・ショッピングセンター・ホテルなど全国の会場と、和菓子・陶芸・漆器など優れた作り手の両方と直接つながりを持っています。",
+    title: "現場で成果を出す販売ノウハウ",
+    desc: "大手チェーン店での現場マネジメント経験と、会計・システムコンサルの知見を融合。実績のある販売スクリプト・接客ノウハウで現場の売上を最大化します。",
     icon: (
       <svg viewBox="0 0 56 56" fill="none" className="w-12 h-12">
-        <circle cx="28" cy="28" r="18" stroke="#8B6F47" strokeWidth="2"/>
-        <ellipse cx="28" cy="28" rx="10" ry="18" stroke="#8B6F47" strokeWidth="1.5"/>
-        <line x1="10" y1="28" x2="46" y2="28" stroke="#8B6F47" strokeWidth="1.5"/>
-        <line x1="13" y1="18" x2="43" y2="18" stroke="#8B6F47" strokeWidth="1.5"/>
-        <line x1="13" y1="38" x2="43" y2="38" stroke="#8B6F47" strokeWidth="1.5"/>
+        <circle cx="28" cy="28" r="18" stroke="var(--accent)" strokeWidth="2"/>
+        <ellipse cx="28" cy="28" rx="10" ry="18" stroke="var(--accent)" strokeWidth="1.5"/>
+        <line x1="10" y1="28" x2="46" y2="28" stroke="var(--accent)" strokeWidth="1.5"/>
+        <line x1="13" y1="18" x2="43" y2="18" stroke="var(--accent)" strokeWidth="1.5"/>
+        <line x1="13" y1="38" x2="43" y2="38" stroke="var(--accent)" strokeWidth="1.5"/>
       </svg>
     ),
   },
   {
     num: "03",
-    title: "売り場を活性化するプロスタッフ",
-    desc: "実演販売・接客に慣れたスタッフが対面でお客様を引きつけます。催事ならではの賑わいと売上を同時に実現します。",
+    title: "販売パートナー同士の連携基盤",
+    desc: "個別の出店にとどまらず、複数の販売パートナーが連携できる仕組みを整備。スケーラブルなビジネス展開をバックアップします。",
     icon: (
       <svg viewBox="0 0 56 56" fill="none" className="w-12 h-12">
-        <circle cx="20" cy="20" r="7" stroke="#8B6F47" strokeWidth="2"/>
-        <path d="M8 44 Q8 32 20 32 Q32 32 32 44" stroke="#8B6F47" strokeWidth="2" fill="none"/>
-        <path d="M34 26 L38 30 L46 20" stroke="#8B6F47" strokeWidth="2.5" strokeLinecap="round"/>
+        <circle cx="20" cy="20" r="7" stroke="var(--accent)" strokeWidth="2"/>
+        <path d="M8 44 Q8 32 20 32 Q32 32 32 44" stroke="var(--accent)" strokeWidth="2" fill="none"/>
+        <path d="M34 26 L38 30 L46 20" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -153,20 +129,20 @@ const MERITS = [
 
 const FAQS = [
   {
+    q: "対応できる業種・商材に制限はありますか？",
+    a: "業種・商材は問いません。和菓子・食品はもちろん、サンプル提供イベント、雑貨、美容・健康商品など、イベント販売に適した商材であればご相談ください。",
+  },
+  {
+    q: "搬入・搬出はSaiyaが対応してもらえますか？",
+    a: "搬入・搬出は原則として各パートナー様ご自身での対応となります。Saiyaは場所の確保、商材・資材調達システム、現場販売ノウハウ、パートナー連携をご提供します。",
+  },
+  {
+    q: "対応エリアはどこですか？",
+    a: "全国対応しております。主要実績は東海（名古屋を中心に）、次いで関東・関西エリアです。その他のエリアもお気軽にご相談ください。",
+  },
+  {
     q: "申し込みはどのくらい前に行えばよいですか？",
-    a: "2〜3ヶ月前のご連絡を推奨しています。ただしスケジュールの空き状況によっては短期間での対応も可能な場合がありますので、まずはお気軽にご相談ください。",
-  },
-  {
-    q: "必要なスペースはどのくらいですか？",
-    a: "概ね10坪〜50坪のスペースで対応しております。会場の広さや形状に合わせて最適な売り場構成をご提案します。小規模なスペースでもご相談ください。",
-  },
-  {
-    q: "遠方の会場でも対応できますか？",
-    a: "全国各地での開催実績があります。交通費・宿泊費等については開催規模に応じてご相談させていただきます。まずはお気軽にお問い合わせください。",
-  },
-  {
-    q: "出展者を自分たちで指定することはできますか？",
-    a: "もちろん可能です。ご要望のジャンルや出展者のご紹介も承ります。弊社ネットワーク内でご希望に合った出展者をご提案することもできます。",
+    a: "2〜3ヶ月前のご連絡を推奨しています。スケジュールの空き状況によっては短期間での対応も可能な場合がありますので、まずはお気軽にご相談ください。",
   },
 ];
 
@@ -180,8 +156,8 @@ export default function Home() {
             <Image src="/logo.svg" alt="株式会社Saiya" width={120} height={50} priority />
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="#flow" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">催事の流れ</Link>
-            <Link href="#examples" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">催事実例</Link>
+            <Link href="#flow" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">出店の流れ</Link>
+            <Link href="#examples" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">実績事例</Link>
             <Link href="#merit" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">選ばれる理由</Link>
             <Link href="#faq" className="text-zinc-600 hover:text-[var(--accent)] transition-colors">よくある質問</Link>
           </nav>
@@ -201,30 +177,24 @@ export default function Home() {
         {/* ── Hero ── */}
         <section className="relative min-h-screen flex items-center justify-center bg-[var(--accent-light)] pt-20 overflow-hidden">
           <ParticleCanvas />
-          <div className="absolute top-20 right-8 opacity-12 rotate-12 pointer-events-none hidden lg:block">
-            <Daifuku size={180} />
-          </div>
-          <div className="absolute bottom-24 left-6 opacity-10 -rotate-6 pointer-events-none hidden lg:block">
-            <Daifuku size={120} />
-          </div>
           <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
-            <p className="text-xs tracking-[0.4em] text-[var(--accent)] mb-6 uppercase">Catalytic Sales × Japanese Crafts</p>
+            <p className="text-xs tracking-[0.4em] text-[var(--accent)] mb-6 uppercase">Event Business Platform</p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide text-[var(--foreground)] mb-6">
-              和の催事で、<br />人と場所を繋ぐ。
+              イベント出店の仕組みで、<br />ビジネスを前に進める。
             </h1>
             <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-2xl mx-auto mb-4">
-              商品の搬入・設営・販売・撤去まで、すべてお任せください。<br className="hidden md:block"/>
-              全国の会場と優れた和の作り手を結び、確かな売上と賑わいを生み出します。
+              業種・商材を問わず、全国のイベント出店を支援。<br className="hidden md:block"/>
+              場所の確保、商材調達システム、現場販売ノウハウ、パートナー連携まで。
             </p>
-            <p className="text-sm text-zinc-400 mb-12">愛知県名古屋市 ／ 全国対応</p>
+            <p className="text-sm text-zinc-400 mb-12">拠点：愛知県名古屋市 ／ 主要実績：東海・関東・関西 ／ 全国対応</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/service/venue"
                 className="px-8 py-4 bg-[var(--foreground)] text-white text-sm tracking-widest rounded hover:bg-[var(--accent)] transition-colors">
-                会場をお持ちの方
+                販売パートナーとして参加する
               </Link>
               <Link href="/service/vendor"
                 className="px-8 py-4 border border-[var(--foreground)] text-[var(--foreground)] text-sm tracking-widest rounded hover:bg-[var(--foreground)] hover:text-white transition-colors">
-                出展・販売をご希望の方
+                ビジネスパートナーとして協業する
               </Link>
             </div>
           </div>
@@ -241,10 +211,10 @@ export default function Home() {
           <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-zinc-700">
               {[
-                { num: "全国", unit: "対応", label: "北海道〜九州まで" },
-                { num: "10", unit: "坪〜", label: "対応スペース目安" },
+                { num: "全国", unit: "対応", label: "東海・関東・関西を中心に全国展開" },
+                { num: "業種", unit: "不問", label: "あらゆる商材・イベント形式に対応" },
                 { num: "2〜3", unit: "ヶ月前", label: "推奨申込みタイミング" },
-                { num: "一括", unit: "代行", label: "搬入〜撤去まで" },
+                { num: "4", unit: "つの提供価値", label: "場所・調達・ノウハウ・連携" },
               ].map((item, i) => (
                 <div key={i} className="px-6 py-6 text-center">
                   <p className="font-serif text-3xl md:text-4xl text-white leading-none">
@@ -266,16 +236,16 @@ export default function Home() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="group border border-[var(--border)] p-10 hover:border-[var(--accent)] transition-colors">
-                <p className="text-xs tracking-[0.2em] text-[var(--accent)] mb-3">FOR VENUE OWNERS</p>
-                <h3 className="font-serif text-2xl text-[var(--foreground)] mb-5">催事開催をご検討の<br/>会場オーナー様へ</h3>
+                <p className="text-xs tracking-[0.2em] text-[var(--accent)] mb-3">FOR SALES PARTNERS</p>
+                <h3 className="font-serif text-2xl text-[var(--foreground)] mb-5">販売パートナーとしての<br/>参加を検討の方へ</h3>
                 <p className="text-sm text-zinc-500 leading-loose mb-6">
-                  「空きスペースを有効活用したい」「集客力のある催事を開きたい」
-                  そんなお悩みを、企画から運営まで一括でお引き受けします。
+                  イベント出店で安定した売上を作りたい方、全国展開を目指す方へ。
+                  場所・システム・ノウハウをまとめて提供します。
                 </p>
                 <ul className="space-y-2 text-xs text-zinc-400 mb-8">
-                  <li>✓ 運営・スタッフ手配まで完全代行</li>
-                  <li>✓ 20坪〜50坪のスペースに対応</li>
-                  <li>✓ 和菓子・工芸品など多様なジャンル</li>
+                  <li>✓ 全国の出店場所を確保</li>
+                  <li>✓ 商材・資材の調達システム提供</li>
+                  <li>✓ 現場販売のノウハウ・スクリプト提供</li>
                 </ul>
                 <Link href="/service/venue"
                   className="inline-block text-sm tracking-widest text-[var(--accent)] border-b border-[var(--accent)] pb-1 group-hover:opacity-70 transition-opacity">
@@ -283,16 +253,16 @@ export default function Home() {
                 </Link>
               </div>
               <div className="group border border-[var(--border)] p-10 hover:border-[var(--accent)] transition-colors">
-                <p className="text-xs tracking-[0.2em] text-[var(--accent)] mb-3">FOR VENDORS / ARTISANS</p>
-                <h3 className="font-serif text-2xl text-[var(--foreground)] mb-5">催事出展をご希望の<br/>作家・メーカー様へ</h3>
+                <p className="text-xs tracking-[0.2em] text-[var(--accent)] mb-3">FOR BUSINESS PARTNERS</p>
+                <h3 className="font-serif text-2xl text-[var(--foreground)] mb-5">ビジネスパートナーとしての<br/>協業を検討の方へ</h3>
                 <p className="text-sm text-zinc-500 leading-loose mb-6">
-                  「全国の会場で販売したい」「準備の手間を減らしたい」
-                  出展に必要な手続きから当日の販売サポートまでお任せください。
+                  イベント出店事業の立ち上げ・拡大を協業したい方へ。
+                  代表の会計・システム知見を活かし、事業ごと支援します。
                 </p>
                 <ul className="space-y-2 text-xs text-zinc-400 mb-8">
-                  <li>✓ 全国の会場をご紹介</li>
-                  <li>✓ 什器・スタッフ手配を代行</li>
-                  <li>✓ 作ることに専念できる環境</li>
+                  <li>✓ 事業設計・ビジネスモデル構築の支援</li>
+                  <li>✓ 全国展開への体制整備</li>
+                  <li>✓ 多角的経営ノウハウの活用</li>
                 </ul>
                 <Link href="/service/vendor"
                   className="inline-block text-sm tracking-widest text-[var(--accent)] border-b border-[var(--accent)] pb-1 group-hover:opacity-70 transition-opacity">
@@ -307,10 +277,10 @@ export default function Home() {
         <section id="flow" className="py-24 bg-[var(--accent-light)]">
           <div className="max-w-5xl mx-auto px-6">
             <p className="text-xs tracking-[0.3em] text-[var(--accent)] mb-3">FLOW</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[var(--foreground)] mb-4">催事開催の流れ</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-[var(--foreground)] mb-4">出店までの流れ</h2>
             <p className="text-sm text-zinc-500 mb-14 max-w-xl">
-              お問い合わせから開催当日まで、弊社が一貫してサポートします。<br/>
-              はじめての方も安心してお任せください。
+              お問い合わせから出店当日まで、弊社が一貫してサポートします。<br/>
+              はじめての方も安心してご相談ください。
             </p>
 
             {/* Desktop: 横並び */}
@@ -366,15 +336,11 @@ export default function Home() {
         <section id="examples" className="py-24 bg-white">
           <div className="max-w-5xl mx-auto px-6">
             <p className="text-xs tracking-[0.3em] text-[var(--accent)] mb-3">EXAMPLES</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-[var(--foreground)] mb-4">催事実例</h2>
-            <p className="text-sm text-zinc-500 mb-12">全国各地の会場にて、様々なジャンルの催事を開催しています。</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-[var(--foreground)] mb-4">実績事例</h2>
+            <p className="text-sm text-zinc-500 mb-12">全国各地の会場にて、様々な業種・形態のイベント出店を支援しています。</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {EXAMPLES.map((ex, i) => (
                 <div key={i} className={`relative rounded-sm overflow-hidden bg-gradient-to-br ${ex.bg} aspect-[4/3]`}>
-                  {/* 苺大福装飾 */}
-                  <div className="absolute top-3 right-3 opacity-20">
-                    <Daifuku size={60} />
-                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-xs text-white/70 tracking-widest mb-1">{ex.venue}</p>
@@ -430,13 +396,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── About ── */}
+        <section className="py-24 bg-white">
+          <div className="max-w-5xl mx-auto px-6">
+            <p className="text-xs tracking-[0.3em] text-[var(--accent)] mb-3">ABOUT</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-[var(--foreground)] mb-10">代表について</h2>
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <div>
+                <p className="text-lg font-medium text-[var(--foreground)] mb-1">加藤 真二</p>
+                <p className="text-xs text-zinc-400 tracking-widest mb-6">代表取締役 / 株式会社Saiya</p>
+                <p className="text-sm text-zinc-500 leading-loose">
+                  大手チェーン店の店長として現場経験を積んだ後、会計・システムコンサルタントとして多くの企業の経営課題を解決。現在は介護事業など複数事業を手掛ける多角的な経営者として活動しながら、イベント出店支援事業を展開。現場で培った実践知と、数字・システムに強いコンサルの視点を組み合わせ、販売パートナー・ビジネスパートナーの成果最大化を支援している。
+                </p>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { label: "出発点", value: "大手チェーン店 店長として現場マネジメントを経験" },
+                  { label: "専門領域", value: "会計・システム構築コンサルティング" },
+                  { label: "現在の展開", value: "介護事業等を含む多角的な事業経営" },
+                  { label: "本サービス", value: "イベント出店支援事業（全国対応）" },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 py-3 border-b border-[var(--border)]">
+                    <span className="text-xs text-[var(--accent)] tracking-widest w-24 shrink-0 pt-0.5">{item.label}</span>
+                    <span className="text-sm text-zinc-600">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA Banner ── */}
         <section className="py-24 bg-[var(--foreground)] text-white">
           <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl mb-4">まずは、ご相談ください。</h2>
+              <h2 className="font-serif text-3xl md:text-4xl mb-4">あなたのイベント出店を、<br/>次のステージへ。</h2>
               <p className="text-zinc-400 leading-loose text-sm">
-                催事の規模・期間・ジャンルを問わずお気軽に。<br/>
+                業種・商材・規模を問わず、まずはご相談ください。<br/>
                 通常2営業日以内にご返信いたします。
               </p>
               <p className="mt-4 text-sm">
@@ -452,7 +448,7 @@ export default function Home() {
               </Link>
               <Link href="/service/venue"
                 className="px-10 py-4 bg-[var(--accent)] text-sm tracking-widest text-center hover:opacity-80 transition-opacity">
-                会場オーナー様はこちら
+                販売パートナーとして参加
               </Link>
             </div>
           </div>
@@ -474,10 +470,10 @@ export default function Home() {
             </p>
           </div>
           <nav className="grid grid-cols-2 gap-x-16 gap-y-3 text-xs text-zinc-500">
-            <Link href="/service/venue" className="hover:text-[var(--accent)] transition-colors">会場オーナー様へ</Link>
-            <Link href="#flow" className="hover:text-[var(--accent)] transition-colors">催事の流れ</Link>
-            <Link href="/service/vendor" className="hover:text-[var(--accent)] transition-colors">出展者様へ</Link>
-            <Link href="#examples" className="hover:text-[var(--accent)] transition-colors">催事実例</Link>
+            <Link href="/service/venue" className="hover:text-[var(--accent)] transition-colors">販売パートナーの方へ</Link>
+            <Link href="#flow" className="hover:text-[var(--accent)] transition-colors">出店の流れ</Link>
+            <Link href="/service/vendor" className="hover:text-[var(--accent)] transition-colors">ビジネスパートナーの方へ</Link>
+            <Link href="#examples" className="hover:text-[var(--accent)] transition-colors">実績事例</Link>
             <Link href="/works" className="hover:text-[var(--accent)] transition-colors">実績</Link>
             <Link href="#faq" className="hover:text-[var(--accent)] transition-colors">よくある質問</Link>
             <Link href="/contact" className="hover:text-[var(--accent)] transition-colors">お問い合わせ</Link>
