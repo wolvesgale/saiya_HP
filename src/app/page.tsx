@@ -76,13 +76,13 @@ const FLOW_STEPS = [
 ];
 
 const EXAMPLES = [
-  { location: "愛知県 名古屋市", venue: "百貨店", category: "和菓子・生菓子フェア", bg: "from-slate-700 to-slate-500" },
-  { location: "東京都 渋谷区", venue: "商業施設", category: "サンプル提供イベント", bg: "from-zinc-700 to-zinc-500" },
-  { location: "大阪府 大阪市", venue: "ショッピングセンター", category: "食品・物販マーケット", bg: "from-stone-700 to-stone-500" },
+  { location: "愛知県 名古屋市", venue: "百貨店", category: "和菓子・生菓子フェア", img: "/event-japan-02.png" },
+  { location: "東京都 渋谷区", venue: "商業施設", category: "サンプル提供イベント", img: "/event-japan-01.png" },
+  { location: "大阪府 大阪市", venue: "ショッピングセンター", category: "食品・物販マーケット", img: "/event-market.png" },
   { location: "愛知県 岡崎市", venue: "ホテル", category: "地域特産品・クラフト展", bg: "from-slate-600 to-zinc-600" },
   { location: "神奈川県 横浜市", venue: "商業施設", category: "美容・ヘルスケア展示", bg: "from-zinc-600 to-slate-600" },
   { location: "三重県 津市", venue: "ショッピングモール", category: "食品・雑貨フェスタ", bg: "from-stone-600 to-zinc-700" },
-];
+] as { location: string; venue: string; category: string; img?: string; bg?: string }[];
 
 const MERITS = [
   {
@@ -175,33 +175,35 @@ export default function Home() {
       <main className="flex-1">
 
         {/* ── Hero ── */}
-        <section className="relative min-h-screen flex items-center justify-center bg-[var(--accent-light)] pt-20 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+          <Image src="/event-booth.png" alt="" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-[var(--foreground)]/65" />
           <ParticleCanvas />
           <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
             <p className="text-xs tracking-[0.4em] text-[var(--accent)] mb-6 uppercase">Event Business Platform</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide text-[var(--foreground)] mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight tracking-wide text-white mb-6">
               イベント出店の仕組みで、<br />ビジネスを前に進める。
             </h1>
-            <p className="text-base md:text-lg text-zinc-500 leading-relaxed max-w-2xl mx-auto mb-4">
+            <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-4">
               業種・商材を問わず、全国のイベント出店を支援。<br className="hidden md:block"/>
               場所の確保、商材調達システム、現場販売ノウハウ、パートナー連携まで。
             </p>
-            <p className="text-sm text-zinc-400 mb-12">拠点：愛知県名古屋市 ／ 主要実績：東海・関東・関西 ／ 全国対応</p>
+            <p className="text-sm text-white/50 mb-12">拠点：愛知県名古屋市 ／ 主要実績：東海・関東・関西 ／ 全国対応</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/service/venue"
-                className="px-8 py-4 bg-[var(--foreground)] text-white text-sm tracking-widest rounded hover:bg-[var(--accent)] transition-colors">
+                className="px-8 py-4 bg-white text-[var(--foreground)] text-sm tracking-widest rounded hover:bg-[var(--accent)] hover:text-white transition-colors">
                 販売パートナーとして参加する
               </Link>
               <Link href="/service/vendor"
-                className="px-8 py-4 border border-[var(--foreground)] text-[var(--foreground)] text-sm tracking-widest rounded hover:bg-[var(--foreground)] hover:text-white transition-colors">
+                className="px-8 py-4 border border-white text-white text-sm tracking-widest rounded hover:bg-white hover:text-[var(--foreground)] transition-colors">
                 ビジネスパートナーとして協業する
               </Link>
             </div>
           </div>
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-            <div className="flex flex-col items-center gap-2 text-zinc-300">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+            <div className="flex flex-col items-center gap-2 text-white/50">
               <span className="text-xs tracking-widest">SCROLL</span>
-              <div className="w-px h-10 bg-gradient-to-b from-zinc-300 to-transparent"/>
+              <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent"/>
             </div>
           </div>
         </section>
@@ -340,8 +342,13 @@ export default function Home() {
             <p className="text-sm text-zinc-500 mb-12">全国各地の会場にて、様々な業種・形態のイベント出店を支援しています。</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {EXAMPLES.map((ex, i) => (
-                <div key={i} className={`relative rounded-sm overflow-hidden bg-gradient-to-br ${ex.bg} aspect-[4/3]`}>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>
+                <div key={i} className="relative rounded-sm overflow-hidden aspect-[4/3]">
+                  {ex.img ? (
+                    <Image src={ex.img} alt={ex.category} fill className="object-cover" />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${ex.bg}`} />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"/>
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <p className="text-xs text-white/70 tracking-widest mb-1">{ex.venue}</p>
                     <h3 className="text-sm font-medium text-white leading-snug mb-1">{ex.category}</h3>

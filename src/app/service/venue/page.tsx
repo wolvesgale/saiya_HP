@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function SalesPartnerPage() {
@@ -15,13 +16,15 @@ export default function SalesPartnerPage() {
       </header>
 
       <main className="flex-1 pt-20">
-        <section className="py-24 bg-[var(--accent-light)]">
-          <div className="max-w-4xl mx-auto px-6">
+        <section className="relative py-32 overflow-hidden">
+          <Image src="/partner-handshake.png" alt="" fill className="object-cover object-center" />
+          <div className="absolute inset-0 bg-[var(--foreground)]/60" />
+          <div className="relative max-w-4xl mx-auto px-6">
             <p className="text-xs tracking-[0.3em] text-[var(--accent)] mb-4">FOR SALES PARTNERS</p>
-            <h1 className="font-serif text-4xl md:text-5xl text-[var(--foreground)] leading-tight">
+            <h1 className="font-serif text-4xl md:text-5xl text-white leading-tight">
               販売パートナーの方へ
             </h1>
-            <p className="text-sm text-zinc-500 mt-6 max-w-xl leading-relaxed">
+            <p className="text-sm text-white/70 mt-6 max-w-xl leading-relaxed">
               イベント出店で安定した売上を作りたい方、全国規模での展開を目指す方へ。Saiyaが場所・システム・ノウハウをまとめて提供します。
             </p>
           </div>
