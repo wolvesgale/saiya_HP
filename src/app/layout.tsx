@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "株式会社Saiya | 和の催事販売",
-  description: "和の文化をつなぐ催事販売のプロフェッショナル。会場オーナー様・出展者様のご相談をお受けしています。",
+  title: "株式会社Saiya | イベント出店支援",
+  description: "業種・商材を問わず、あらゆるイベント出店ビジネスを支援。場所の確保、商材調達システム、現場販売ノウハウ、パートナー連携まで。東海・関東・関西を中心に全国対応。",
 };
 
 export default function RootLayout({
